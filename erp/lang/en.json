@@ -1,0 +1,12 @@
+{
+    "Login_Page"    : "----------------------------------Login Page-------------------------------------------", 
+    "System"       : "ERP SYSTEM",
+    "Sign_Title"   : "Sign in to start your session", 
+    "Email"        : "Email",
+    "Password"     : "Password",
+    "Remember_Me"  : "Remember Me",
+    "Sign_Button"  : "Sign In",
+    
+    "Programmer"   : "Programmer en"
+
+}

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Middleware\Localization;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(Localization::class)
+->group(function (){
+
+    Route::view('/','index');
+    // Route::get('/', function () {
+    //     return view('index');
+    // })->middleware(['auth', 'verified'])->name('index');
+    
+    // require __DIR__ . '/auth.php';
+
 });
+
