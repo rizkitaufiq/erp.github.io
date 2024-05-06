@@ -16,6 +16,25 @@
     <title>Document</title>
 </head>
 <body>
+  <header class="main-header">
+    <nav class="navbar navbar-static-top" role="navigation">
+      <div class="header-full-right-dropdown">
+  <li class="dropdown tasks-menu" style="list-style: none">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <button class="button-full-right-dropdown">Languange</button>
+    </a>
+    <ul class="dropdown-menu">
+      @foreach (config('localization.locales') as $locale)
+        <li>
+          <a href="{{ route('localization', $locale)  }}">{{ __($locale) }}</a>
+        </li>    
+      @endforeach
+    </ul>
+  </li>
+</div>
+</nav>
+  </header>
+
     <div class="login-box">
         <div class="login-logo">
           <a href="../../index2.html"><b>@lang('System')</a>
@@ -46,13 +65,13 @@
           </form>
   
           <div class="social-auth-links text-center">
-            <p>- OR -</p>
+            <p>- @lang('Or') -</p>
             <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using Facebook</a>
             <a href="#" class="btn btn-block btn-social btn-google-plus btn-flat"><i class="fa fa-google-plus"></i> Sign in using Google+</a>
           </div><!-- /.social-auth-links -->
   
-          <a href="#">I forgot my password</a><br>
-          <a href="register.html" class="text-center">Register a new membership</a>
+          <a href="#">@lang('I_Forgot_My_Password')</a><br>
+          <a href="register.html" class="text-center">@lang('Register_A_New_Membership')</a>
   
         </div><!-- /.login-box-body -->
       </div><!-- /.login-box -->

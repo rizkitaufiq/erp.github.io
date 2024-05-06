@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Localization_Controller;
 use App\Http\Middleware\Localization;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,8 @@ use Illuminate\Support\Facades\App;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/localization/{locale}', Localization_Controller::class)->name('localization');
 
 Route::middleware(Localization::class)
 ->group(function (){

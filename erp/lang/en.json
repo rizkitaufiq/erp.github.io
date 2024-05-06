@@ -6,6 +6,9 @@
     "Password"     : "Password",
     "Remember_Me"  : "Remember Me",
     "Sign_Button"  : "Sign In",
+    "Or"           : "Or",
+    "I_Forgot_My_Password" : "I forgot my password",
+    "Register_A_New_Membership" : "Register a new membership", 
     
     "Programmer"   : "Programmer en"
 
