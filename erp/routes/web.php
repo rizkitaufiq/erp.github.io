@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth\Login_Controller;
+use App\Http\Controllers\Auth\Logout_Controller;
+use App\Http\Controllers\Auth\Registration_Controller;
+use App\Http\Controllers\Beranda\Beranda_Controller;
 use App\Http\Controllers\Localization_Controller;
 use App\Http\Middleware\Localization;
 use Illuminate\Support\Facades\Route;
@@ -7,7 +11,7 @@ use Illuminate\Support\Facades\App;
 
 
 /*
-|--------------------------------------------------------------------------
+|-----------------------------------------F---------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -22,7 +26,27 @@ Route::get('/localization/{locale}', Localization_Controller::class)->name('loca
 Route::middleware(Localization::class)
 ->group(function (){
 
+    Route::get('/', function(){
+        return view('welcome');
+    })->name('home');
+    
+// -----------------------------------------------------Auth-----------------------------------------------------    
     Route::view('/','index');
+
+    Route::get('/', [Login_Controller::class,'login_page'])->name('login.page');
+    Route::post('/', [Login_Controller::class,'login_process'])->name('login.process');
+    Route::get('/logout', [Logout_Controller::class, 'logout_process'])->name('logout.process');
+    Route::get('/auth/registration', [Registration_Controller::class, 'registration_page'])->name('registration.page');
+    Route::post('/auth/registration',[Registration_Controller::class, 'registration_process'])->name('registration.process');
+
+// -----------------------------------------------------Beranda-----------------------------------------------------    
+    Route::get('/beranda/',[Beranda_Controller::class, 'beranda_page'])->name('beranda.page');
+    
+    // Route::get('/auth/registration/', function(){
+    //     return view('registration');
+    // });
+
+    
     // Route::get('/', function () {
     //     return view('index');
     // })->middleware(['auth', 'verified'])->name('index');

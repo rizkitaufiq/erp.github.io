@@ -13,7 +13,7 @@
     <link href="../../dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
     <link href="../../plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
-    <title>@langUpper('Welcome_Domain_Title')</title>
+    <title>@lang('Register_Domain_Title')</title>
 </head>
 <body>
   <header class="main-header">
@@ -37,50 +37,44 @@
 
     <div class="login-box">
         <div class="login-logo">
-          <a href="../../index2.html"><b>@langUpper('Page_Title')</a>
+          <a href="../../index2.html"><b>@langUpper('System')</a>
         </div><!-- /.login-logo -->
         <div class="login-box-body">
-          <p class="login-box-msg">@lang('Sign_Title')</p>
-          
-          <div class="mt-5">
+          <p class="login-box-msg">@lang('Register_Title')</p>
 
-            @if ($errors->has('login_error'))
-                <div class="alert alert-danger">{{ $errors->first('login_error') }}</div>
-            @endif
-
-          </div>
-
-          <form action="{{ route('login.process') }}" method="post">
+          <form action="{{ route('registration.process') }}" method="post">
             @csrf
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="@lang('Name')" name="name" />
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                
+                @error('name')
+                  <span class="alert" style="color: brown">{{ $message }}</span>
+                @enderror
+            </div>
+
             <div class="form-group has-feedback">
               <input type="text" class="form-control" placeholder="@lang('Email')" name="email" />
               <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 
               @error('email')
-                <span class="alert" style="color: #dd4b39 ">{{ $message }}</span>
-              @enderror
+                  <span class="alert" style="color: brown">{{ $message }}</span>
+                @enderror
             </div>
             
             <div class="form-group has-feedback">
-              <input type="password" class="form-control" placeholder="@lang('Password')" name="password"/>
+              <input type="password" class="form-control" placeholder="@lang('Password')" name="password" />
               <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
-              @error('password')
-                <span class="alert" style="color: #dd4b39 ">{{ $message }}</span>
-              @enderror
+               @error('password')
+                  <span class="alert" style="color: brown">{{ $message }}</span>
+                @enderror
             </div>
             
             <div class="row">
-              <div class="col-xs-8">    
-                <div class="checkbox icheck">
-                  <label>
-                    <input type="checkbox"> @lang('Remember_Me')
-                  </label>
-                </div>                        
-              </div><!-- /.col -->
               
-              <div class="col-xs-4">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">@lang('Sign_Button')</button>
+              <div class="col-xs-12">
+                <button type="submit" class="btn btn-primary btn-block btn-flat">@lang('Register_Button')</button>
               </div><!-- /.col -->
             
             </div>
@@ -88,12 +82,9 @@
   
           <div class="social-auth-links text-center">
             <p>- @lang('Or') -</p>
-            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using Facebook</a>
-            <a href="#" class="btn btn-block btn-social btn-google-plus btn-flat"><i class="fa fa-google-plus"></i> Sign in using Google+</a>
-          </div><!-- /.social-auth-links -->
+          </div>
   
-          <a href="#">@lang('I_Forgot_My_Password')</a><br>
-          <a href="{{ route('registration.page') }}" class="text-center">@lang('Register_A_New_Membership')</a>
+          <a href="{{ route('login.page') }}">@lang('I_Have_An_Account')</a><br>
   
         </div><!-- /.login-box-body -->
       </div><!-- /.login-box -->

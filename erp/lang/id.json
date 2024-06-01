@@ -1,16 +1,34 @@
 {
-    "Login_Page"   : "----------------------------------Login Page-------------------------------------------", 
-    "System"       : "SISTEM ERP",
+    "Language"     : "Bahasa",
+    "Welcome_Domain_Title": "Sistem Erp | Laravel 10",
+    "Page_Title"   : "Sistem Erp",
+
+"Auth"             : "---------------------------------------Auth--------------------------------------------",
+    "Login_Page"   : "----------------------------------Login Page-------------------------------------------",  
     "Sign_Title"   : "Masuk untuk memulai sesi anda", 
     "Email"        : "Email",
     "Password"     : "Password",
     "Remember_Me"  : "Ingatkan saya",
     "Sign_Button"  : "Masuk",
+
+    "Registration_Page" : "----------------------------------Registration Page-------------------------------------------", 
+    "Register_Domain_Title" : "SISTEM ERP | DAFTAR",
+    "Register_Title": "Silahkan daftar akun baru",
+    "Name"         : "Nama",
+    "Register_Button"  : "Daftar",
+    "I_Have_An_Account": "Saya sudah punya akun",
+
     "Or"           : "Atau",
     "I_Forgot_My_Password" : "Saya lupa password",
     "Register_A_New_Membership" : "Daftar anggota baru",
 
-
-    "Programmer"   : "Programmer id"
+    "Auth_Validate": "----------------------------------Validasi Auth-------------------------------------------",
+    "Email_Required"        : "Email kosong, silahkan masukan",
+    "Email_Email"           : "Silahkan masukan '@' atau tipe email",
+    "Email_Unique"          : "Email sudah ada atau terdaftar",
+    "Email_And_Password_Do_Not_Match" : "Email dan kata sandi tidak cocok",
+    "Name_Required"         : "Name kosong, silahkan masukan",
+    "Password_Required"     : "Password kosong, silahkan masukan",
+    "Password_Min"          : "Minimal 3 karakter"
 
 }

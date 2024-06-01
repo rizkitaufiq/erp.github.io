@@ -1,15 +1,34 @@
-{
-    "Login_Page"    : "----------------------------------Login Page-------------------------------------------", 
-    "System"       : "ERP SYSTEM",
+{ 
+    "Language"     : "Language", 
+    "Welcome_Domain_Title": "Erp System | Laravel 10",
+    "Page_Title"   : "Erp System",     
+
+"Auth"             : "---------------------------------------Auth--------------------------------------------",      
+    "Login_Page"   : "----------------------------------Login Page-------------------------------------------",  
     "Sign_Title"   : "Sign in to start your session", 
     "Email"        : "Email",
     "Password"     : "Password",
     "Remember_Me"  : "Remember Me",
     "Sign_Button"  : "Sign In",
-    "Or"           : "Or",
-    "I_Forgot_My_Password" : "I forgot my password",
-    "Register_A_New_Membership" : "Register a new membership", 
     
-    "Programmer"   : "Programmer en"
+    "Registration_Page"     : "----------------------------------Registration Page-------------------------------------------", 
+    "Register_Domain_Title" : "ERP SYSTEM | REGISTER",
+    "Register_Title"        : "Please register a new account",
+    "Name"                  : "Name",
+    "Register_Button"       : "Register",
+    "I_Have_An_Account"     : "I have an account",  
+
+    "Or"                        : "Or",
+    "I_Forgot_My_Password"      : "I forgot my password",
+    "Register_A_New_Membership" : "Register a new membership",
+
+    "Auth_Validate": "----------------------------------Auth Validate-------------------------------------------",
+    "Email_Required"        : "Email required, please entry",
+    "Email_Email"           : "Please include an '@' or email type",
+    "Email_Unique"          : "Email already exist or registered",
+    "Email_And_Password_Do_Not_Match" : "Email and password do not match",
+    "Name_Required"         : "Name required, please entry",
+    "Password_Required"     : "Password required, please entry",
+    "Password_Min"          : "At least 3 characters"
 
 }
