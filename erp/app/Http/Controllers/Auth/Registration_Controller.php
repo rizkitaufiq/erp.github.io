@@ -13,7 +13,9 @@ class Registration_Controller extends Controller
 {
     //
     function registration_page(){
-
+        if (Auth::check()){
+            return redirect(route('beranda.page'));
+        }
         return view('/auth/registration');
     }
 

@@ -33,25 +33,19 @@ Route::middleware(Localization::class)
 // -----------------------------------------------------Auth-----------------------------------------------------    
     Route::view('/','index');
 
-    Route::get('/', [Login_Controller::class,'login_page'])->name('login.page');
-    Route::post('/', [Login_Controller::class,'login_process'])->name('login.process');
-    Route::get('/logout', [Logout_Controller::class, 'logout_process'])->name('logout.process');
-    Route::get('/auth/registration', [Registration_Controller::class, 'registration_page'])->name('registration.page');
-    Route::post('/auth/registration',[Registration_Controller::class, 'registration_process'])->name('registration.process');
+    Route::middleware('prevent')->group(function () {
+        Route::get('/', [Login_Controller::class,'login_page'])->name('login.page');
+        Route::post('/', [Login_Controller::class,'login_process'])->name('login.process');
+    });
+    
+        Route::get('/logout', [Logout_Controller::class, 'logout_process'])->name('logout.process');
+        Route::get('/auth/registration', [Registration_Controller::class, 'registration_page'])->name('registration.page');
+        Route::post('/auth/registration',[Registration_Controller::class, 'registration_process'])->name('registration.process');
 
 // -----------------------------------------------------Beranda-----------------------------------------------------    
-    Route::get('/beranda/',[Beranda_Controller::class, 'beranda_page'])->name('beranda.page');
-    
-    // Route::get('/auth/registration/', function(){
-    //     return view('registration');
-    // });
-
-    
-    // Route::get('/', function () {
-    //     return view('index');
-    // })->middleware(['auth', 'verified'])->name('index');
-    
-    // require __DIR__ . '/auth.php';
+    Route::middleware('prevent')->group(function(){
+        Route::get('/beranda/',[Beranda_Controller::class, 'beranda_page'])->name('beranda.page');
+    });
 
 });
 

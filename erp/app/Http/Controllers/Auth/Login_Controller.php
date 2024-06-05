@@ -31,7 +31,7 @@ class Login_Controller extends Controller
         $credentials = $request->only('email','password');
 
         if(Auth::attempt($credentials)){
-            return redirect()->intended('beranda.page');
+            return redirect(route('beranda.page'));
         }
         return back()->withErrors(['login_error' => __('Email_And_Password_Do_Not_Match')])
         ->withInput($request->only('email'));
