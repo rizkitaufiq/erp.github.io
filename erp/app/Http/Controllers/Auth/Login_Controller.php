@@ -14,7 +14,7 @@ class Login_Controller extends Controller
         if (Auth::check()){
             return redirect(route('beranda.page'));
         }
-        return view('index');
+    return view('index');
     }
 
     function login_process(Request $request){

@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\Login_Controller;
 use App\Http\Controllers\Auth\Logout_Controller;
 use App\Http\Controllers\Auth\Registration_Controller;
 use App\Http\Controllers\Beranda\Beranda_Controller;
+use App\Http\Controllers\Document\Document_Controller;
 use App\Http\Controllers\Localization_Controller;
 use App\Http\Middleware\Localization;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,13 @@ Route::middleware(Localization::class)
 // -----------------------------------------------------Beranda-----------------------------------------------------    
     Route::middleware('prevent')->group(function(){
         Route::get('/beranda/',[Beranda_Controller::class, 'beranda_page'])->name('beranda.page');
+    });
+
+// -----------------------------------------------------Document-----------------------------------------------------    
+    Route::controller(Document_Controller::class)->group(function(){
+        Route::get('/document/{slug}','index')->name('item.index');
+        // Route::get('/document/form','form')->name('item.form');
+        // Route::get('/document/delete/{item}','destroy')->name('item.delete');
     });
 
 });
