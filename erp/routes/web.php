@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\Logout_Controller;
 use App\Http\Controllers\Auth\Registration_Controller;
 use App\Http\Controllers\Beranda\Beranda_Controller;
 use App\Http\Controllers\Document\Document_Controller;
+use App\Http\Controllers\Item\Item_Controller;
 use App\Http\Controllers\Localization_Controller;
 use App\Http\Middleware\Localization;
 use Illuminate\Support\Facades\Route;
@@ -49,8 +50,16 @@ Route::middleware(Localization::class)
     });
 
 // -----------------------------------------------------Document-----------------------------------------------------    
-    Route::controller(Document_Controller::class)->group(function(){
-        Route::get('/document/{slug}','index')->name('item.index');
+    Route::middleware('prevent')->group(function(){
+        // Route::get('/document/{slug}',[Document_Controller::class, 'index'])->name('document.index');
+        // Route::get('/document/form','form')->name('item.form');
+        // Route::get('/document/delete/{item}','destroy')->name('item.delete');
+    });
+
+// -----------------------------------------------------Item-----------------------------------------------------    
+    Route::middleware('prevent')->group(function(){
+        Route::get('/item',[Item_Controller::class, 'index'])->name('item.index');
+        Route::get('/item/form',[Item_Controller::class, 'form'])->name('item.form');
         // Route::get('/document/form','form')->name('item.form');
         // Route::get('/document/delete/{item}','destroy')->name('item.delete');
     });

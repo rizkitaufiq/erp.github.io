@@ -13,14 +13,14 @@ use Illuminate\Http\Request;
 class Registration_Controller extends Controller
 {
     //
-    function registration_page(){
+    public function registration_page(){
         if (Auth::check()){
             return redirect(route('beranda.page'));
         }
         return view('/auth/registration');
     }
 
-    function registration_process(Request $request){
+    public function registration_process(Request $request){
     $request->validate([
         'name'      => 'required',
         'email'     => 'required|email|unique:users',

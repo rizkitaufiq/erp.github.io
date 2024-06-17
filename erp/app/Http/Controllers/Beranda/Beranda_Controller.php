@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class Beranda_Controller extends Controller
 {
     //
-    function beranda_page(){
+    public function beranda_page(){
         if (Auth::check()){
             return view('/beranda/index');
         }

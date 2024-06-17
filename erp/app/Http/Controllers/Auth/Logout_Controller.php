@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Session;
 class Logout_Controller extends Controller
 {
     //
-    function logout_process(){
+    public function logout_process(){
         Session::flush();
         Auth::logout();
         return redirect(route('login.page'));

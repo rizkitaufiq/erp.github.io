@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\Auth;
 class Login_Controller extends Controller
 {
     //
-    function login_page(){
+    public function login_page(){
         if (Auth::check()){
             return redirect(route('beranda.page'));
         }
     return view('index');
     }
 
-    function login_process(Request $request){
+    public function login_process(Request $request){
         $request->validate([
             'email'     => 'required|email|max:255',
             'password'  => 'required|min:3',
