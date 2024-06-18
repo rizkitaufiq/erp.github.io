@@ -13,8 +13,7 @@ class Item_Controller extends Controller
     //
     function item_page(){
         if (Auth::check()){
-            $items = Item::latest()->get();
-            return view('Item',compact('items'));
+            return view('/item/index');
         }
     return view('index');   
     }

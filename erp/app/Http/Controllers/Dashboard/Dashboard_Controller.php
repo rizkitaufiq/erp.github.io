@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Beranda;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 
-class Beranda_Controller extends Controller
+class Dashboard_Controller extends Controller
 {
     //
-    public function beranda_page(){
+    public function dashboard_page(){
         if (Auth::check()){
-            return view('/beranda/index');
+            return view('/dashboard/index');
         }
         return view('index');
     }

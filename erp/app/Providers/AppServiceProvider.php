@@ -29,16 +29,5 @@ class AppServiceProvider extends ServiceProvider
             return "<?php echo strtoupper(trans($expression)); ?>";
         });
 
-        // View::composer('*', function ($view) {
-        //     $view->with('app', app());
-
-        //     if (Auth::check()) {
-        //         URL::forceRootUrl(config('app.url'));
-        //     }
-
-        //     header("Cache-Control: no-cache, must-revalidate"); // HTTP 1.1
-        //     header("Pragma: no-cache"); // HTTP 1.0
-        //     header("Expires: Sat, 01 Jan 2000 00:00:00 GMT"); // Date in the past
-        // });
     }
 }

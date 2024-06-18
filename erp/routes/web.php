@@ -3,7 +3,7 @@
 use App\Http\Controllers\Auth\Login_Controller;
 use App\Http\Controllers\Auth\Logout_Controller;
 use App\Http\Controllers\Auth\Registration_Controller;
-use App\Http\Controllers\Beranda\Beranda_Controller;
+use App\Http\Controllers\Dashboard\Dashboard_Controller;
 use App\Http\Controllers\Document\Document_Controller;
 use App\Http\Controllers\Item\Item_Controller;
 use App\Http\Controllers\Localization_Controller;
@@ -44,9 +44,9 @@ Route::middleware(Localization::class)
         Route::get('/auth/registration', [Registration_Controller::class, 'registration_page'])->name('registration.page');
         Route::post('/auth/registration',[Registration_Controller::class, 'registration_process'])->name('registration.process');
 
-// -----------------------------------------------------Beranda-----------------------------------------------------    
+// -----------------------------------------------------Dashboard-----------------------------------------------------    
     Route::middleware('prevent')->group(function(){
-        Route::get('/beranda/',[Beranda_Controller::class, 'beranda_page'])->name('beranda.page');
+        Route::get('/dashboard',[Dashboard_Controller::class, 'dashboard_page'])->name('dashboard.page');
     });
 
 // -----------------------------------------------------Document-----------------------------------------------------    
@@ -58,7 +58,7 @@ Route::middleware(Localization::class)
 
 // -----------------------------------------------------Item-----------------------------------------------------    
     Route::middleware('prevent')->group(function(){
-        Route::get('/item',[Item_Controller::class, 'index'])->name('item.index');
+        Route::get('/item',[Item_Controller::class, 'item_page'])->name('item.page');
         Route::get('/item/form',[Item_Controller::class, 'form'])->name('item.form');
         // Route::get('/document/form','form')->name('item.form');
         // Route::get('/document/delete/{item}','destroy')->name('item.delete');

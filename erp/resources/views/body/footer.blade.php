@@ -46,5 +46,9 @@
 
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js" type="text/javascript"></script>
+
+<!-- Sweet Alert 2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>
